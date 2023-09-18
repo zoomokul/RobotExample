@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on darwin)" generated="20230606 16:28:51.717" rpa="false" schemaversion="3">
+<suite id="s1" name="TC-01" source="/Users/abayar/PycharmProjects/Automation/AutomationExercise/TestCases/TC-01.robot">
+<test id="s1-t1" name="Create Account" line="7">
+<kw name="Launch Browser" library="TC-01_res">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://automationexercise.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230606 16:28:52.030" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
+<msg timestamp="20230606 16:28:52.031" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230606 16:28:52.030" endtime="20230606 16:29:03.526"/>
+</kw>
+<status status="PASS" starttime="20230606 16:28:52.030" endtime="20230606 16:29:03.526"/>
+</kw>
+<kw name="Navigate to URL" library="TC-01_res">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://automationexercise.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230606 16:29:03.527" level="INFO">Opening url 'http://automationexercise.com'</msg>
+<status status="PASS" starttime="20230606 16:29:03.527" endtime="20230606 16:29:07.057"/>
+</kw>
+<status status="PASS" starttime="20230606 16:29:03.526" endtime="20230606 16:29:07.057"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230606 16:29:07.057" endtime="20230606 16:29:07.592"/>
+</kw>
+<kw name="Verify Home Page Is Visible" library="TC-01_res">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Automation Exercise</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230606 16:29:07.608" level="INFO">Current page contains text 'Automation Exercise'.</msg>
+<status status="PASS" starttime="20230606 16:29:07.593" endtime="20230606 16:29:07.608"/>
+</kw>
+<status status="PASS" starttime="20230606 16:29:07.592" endtime="20230606 16:29:07.608"/>
+</kw>
+<kw name="Click Sign Up" library="TC-01_res">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Signup / Login</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230606 16:29:07.609" level="INFO">Clicking link 'Signup / Login'.</msg>
+<status status="PASS" starttime="20230606 16:29:07.609" endtime="20230606 16:29:09.205"/>
+</kw>
+<status status="PASS" starttime="20230606 16:29:07.608" endtime="20230606 16:29:09.205"/>
+</kw>
+<kw name="Verify 'New User Signup!' is visible" library="TC-01_res">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://h2[text()='New User Signup!']</arg>
+<arg>New User Signup!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230606 16:29:09.229" level="INFO">Element 'xpath://h2[text()='New User Signup!']' contains text 'New User Signup!'.</msg>
+<status status="PASS" starttime="20230606 16:29:09.205" endtime="20230606 16:29:09.230"/>
+</kw>
+<status status="PASS" starttime="20230606 16:29:09.205" endtime="20230606 16:29:09.230"/>
+</kw>
+<kw name="Enter Name" library="TC-01_res">
+<kw name="Run" library="OperatingSystem">
+<var>${random_name}</var>
+<arg>python -c "from faker import Faker; faker = Faker(); print(faker.name())"</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20230606 16:29:09.235" level="INFO">Running command 'python -c "from faker import Faker; faker = Faker(); print(faker.name())" 2&gt;&amp;1'.</msg>
+<msg timestamp="20230606 16:29:09.648" level="INFO">${random_name} = Mark Collins</msg>
+<status status="PASS" starttime="20230606 16:29:09.230" endtime="20230606 16:29:09.648"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[data-qa='signup-name']</arg>
+<arg>${random_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230606 16:29:09.649" level="INFO">Typing text 'Mark Collins' into text field 'css:input[data-qa='signup-name']'.</msg>
+<status status="PASS" starttime="20230606 16:29:09.648" endtime="20230606 16:29:10.321"/>
+</kw>
+<status status="PASS" starttime="20230606 16:29:09.230" endtime="20230606 16:29:10.321"/>
+</kw>
+<kw name="Enter Mail" library="TC-01_res">
+<kw name="Run" library="OperatingSystem">
+<var>${random_email}</var>
+<arg>python -c "from faker import Faker; faker = Faker(); print(faker.email())"</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20230606 16:29:10.324" level="INFO">Running command 'python -c "from faker import Faker; faker = Faker(); print(faker.email())" 2&gt;&amp;1'.</msg>
+<msg timestamp="20230606 16:29:10.684" level="INFO">${random_email} = dodsonpamela@example.net</msg>
+<status status="PASS" starttime="20230606 16:29:10.321" endtime="20230606 16:29:10.684"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[data-qa='signup-email']</arg>
+<arg>${random_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230606 16:29:10.685" level="INFO">Typing text 'dodsonpamela@example.net' into text field 'css:input[data-qa='signup-email']'.</msg>
+<status status="PASS" starttime="20230606 16:29:10.685" endtime="20230606 16:29:10.744"/>
+</kw>
+<status status="PASS" starttime="20230606 16:29:10.321" endtime="20230606 16:29:10.744"/>
+</kw>
+<kw name="Click Sign Up Button" library="TC-01_res">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Signup</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230606 16:29:10.744" level="INFO">Clicking button 'Signup'.</msg>
+<status status="PASS" starttime="20230606 16:29:10.744" endtime="20230606 16:29:13.639"/>
+</kw>
+<status status="PASS" starttime="20230606 16:29:10.744" endtime="20230606 16:29:13.640"/>
+</kw>
+<kw name="Verify that 'ENTER ACCOUNT INFORMATION' is visible" library="TC-01_res">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath://b[text()='Enter Account Information']</arg>
+<arg>ENTER ACCOUNT INFORMATION</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230606 16:29:13.666" level="INFO">Element 'xpath://b[text()='Enter Account Information']' contains text 'ENTER ACCOUNT INFORMATION'.</msg>
+<status status="PASS" starttime="20230606 16:29:13.640" endtime="20230606 16:29:13.666"/>
+</kw>
+<status status="PASS" starttime="20230606 16:29:13.640" endtime="20230606 16:29:13.666"/>
+</kw>
+<doc>Test case to create an account</doc>
+<status status="PASS" starttime="20230606 16:28:52.029" endtime="20230606 16:29:13.666"/>
+</test>
+<status status="PASS" starttime="20230606 16:28:51.718" endtime="20230606 16:29:13.667"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC-01">TC-01</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230606 16:28:52.029" level="WARN">Imported library 'faker' contains no keywords.</msg>
+</errors>
+</robot>

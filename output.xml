@@ -1,0 +1,1958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on darwin)" generated="20230713 14:31:48.037" rpa="false" schemaversion="3">
+<suite id="s1" name="Test2" source="/Users/abayar/PycharmProjects/Automation/Memurlar/test2.robot">
+<test id="s1-t1" name="Navigate to Website and Get Texts from h5 Elements" line="6">
+<kw name="Set Variable" library="BuiltIn">
+<var>${file_path}</var>
+<arg>Memurlar/result.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230713 14:31:48.316" level="INFO">${file_path} = Memurlar/result.txt</msg>
+<status status="PASS" starttime="20230713 14:31:48.316" endtime="20230713 14:31:48.316"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.memurlar.net/sonhaberler/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230713 14:31:48.317" level="INFO">Opening browser 'chrome' to base url 'https://www.memurlar.net/sonhaberler/'.</msg>
+<msg timestamp="20230713 14:31:48.321" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230713 14:31:48.316" endtime="20230713 14:32:00.488"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${elements}</var>
+<arg>css:[role='article']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.508" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_38")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement...</msg>
+<status status="PASS" starttime="20230713 14:32:00.488" endtime="20230713 14:32:00.508"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<doc>Removes a file with the given path.</doc>
+<msg timestamp="20230713 14:32:00.509" level="INFO" html="true">Removed file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.508" endtime="20230713 14:32:00.509"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_38")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.535" level="INFO">${link} = https://www.memurlar.net/haber/1070853/cig-sute-yuzde-35-zam.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.509" endtime="20230713 14:32:00.535"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.550" level="INFO">${title} = Çiğ süte yüzde 35 zam</msg>
+<status status="PASS" starttime="20230713 14:32:00.535" endtime="20230713 14:32:00.550"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.552" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.551" endtime="20230713 14:32:00.552"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.553" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.552" endtime="20230713 14:32:00.553"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.509" endtime="20230713 14:32:00.553"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_39")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.564" level="INFO">${link} = https://www.memurlar.net/haber/1070852/kocaeli-de-eski-kiracisini-tufekle-oldurmekle-suclanan-saniga-muebbet-hapis-istemi.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.553" endtime="20230713 14:32:00.564"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.576" level="INFO">${title} = Kocaeli'de eski kiracısını tüfekle öldürmekle suçlanan sanığa müebbet hapis istemi</msg>
+<status status="PASS" starttime="20230713 14:32:00.564" endtime="20230713 14:32:00.576"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.577" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.576" endtime="20230713 14:32:00.577"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.577" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.577" endtime="20230713 14:32:00.577"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.553" endtime="20230713 14:32:00.577"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_40")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.586" level="INFO">${link} = https://www.memurlar.net/haber/1070851/kpss-a-grubu-ve-ogretmenlik-sinav-giris-belgeleri-erisime-acildi.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.578" endtime="20230713 14:32:00.586"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.598" level="INFO">${title} = KPSS A Grubu ve Öğretmenlik sınav giriş belgeleri erişime açıldı</msg>
+<status status="PASS" starttime="20230713 14:32:00.586" endtime="20230713 14:32:00.598"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.611" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.598" endtime="20230713 14:32:00.611"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.613" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.612" endtime="20230713 14:32:00.613"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.577" endtime="20230713 14:32:00.613"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_41")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.623" level="INFO">${link} = https://www.memurlar.net/haber/1070484/son-7-yil-hizmet-ve-sgk-ya-borclanilan-sure-nasil-hesaplanir.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.614" endtime="20230713 14:32:00.623"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.632" level="INFO">${title} = Son 7 yıl hizmet ve SGK'ya borçlanılan süre nasıl hesaplanır?</msg>
+<status status="PASS" starttime="20230713 14:32:00.623" endtime="20230713 14:32:00.632"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.634" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.632" endtime="20230713 14:32:00.634"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.653" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.634" endtime="20230713 14:32:00.653"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.613" endtime="20230713 14:32:00.653"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_42")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.663" level="INFO">${link} = https://www.memurlar.net/haber/1070850/ak-parti-adana-il-baskani-mehmet-ay-gorevinden-istifa-etti.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.653" endtime="20230713 14:32:00.663"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.671" level="INFO">${title} = AK Parti Adana İl Başkanı Mehmet Ay görevinden istifa etti</msg>
+<status status="PASS" starttime="20230713 14:32:00.663" endtime="20230713 14:32:00.671"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.672" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.671" endtime="20230713 14:32:00.672"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.673" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.673" endtime="20230713 14:32:00.673"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.653" endtime="20230713 14:32:00.673"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_43")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.682" level="INFO">${link} = https://www.memurlar.net/haber/1070849/cilingirle-eve-girdiler-izmir-de-avukat-korkunc-halde-bulundu.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.674" endtime="20230713 14:32:00.682"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.690" level="INFO">${title} = Çilingirle eve girdiler! İzmir'de avukat korkunç halde bulundu</msg>
+<status status="PASS" starttime="20230713 14:32:00.682" endtime="20230713 14:32:00.690"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.691" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.690" endtime="20230713 14:32:00.691"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.692" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.691" endtime="20230713 14:32:00.692"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.674" endtime="20230713 14:32:00.692"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_44")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.700" level="INFO">${link} = https://www.memurlar.net/haber/1070848/cumhurbaskani-erdogan-bahceli-ile-gorusecek.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.692" endtime="20230713 14:32:00.700"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.710" level="INFO">${title} = Cumhurbaşkanı Erdoğan, Bahçeli ile görüşecek</msg>
+<status status="PASS" starttime="20230713 14:32:00.700" endtime="20230713 14:32:00.710"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.711" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.710" endtime="20230713 14:32:00.711"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.712" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.711" endtime="20230713 14:32:00.712"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.692" endtime="20230713 14:32:00.712"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_45")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.720" level="INFO">${link} = https://www.memurlar.net/haber/1070847/ingiliz-futbolcu-dele-alli-cocukken-tacize-ugradigini-acikladi.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.712" endtime="20230713 14:32:00.720"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.728" level="INFO">${title} = İngiliz futbolcu Dele Alli, çocukken tacize uğradığını açıkladı</msg>
+<status status="PASS" starttime="20230713 14:32:00.720" endtime="20230713 14:32:00.728"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.729" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.728" endtime="20230713 14:32:00.729"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.730" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.729" endtime="20230713 14:32:00.730"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.712" endtime="20230713 14:32:00.730"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_46")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.738" level="INFO">${link} = https://www.memurlar.net/haber/1070846/igdir-da-surekli-aglayan-bebegin-vucudundan-enjektor-ignesi-cikti.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.730" endtime="20230713 14:32:00.738"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.746" level="INFO">${title} = Iğdır'da sürekli ağlayan bebeğin vücudundan enjektör iğnesi çıktı</msg>
+<status status="PASS" starttime="20230713 14:32:00.738" endtime="20230713 14:32:00.746"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.747" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.747" endtime="20230713 14:32:00.748"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.748" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.748" endtime="20230713 14:32:00.748"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.730" endtime="20230713 14:32:00.748"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_47")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.757" level="INFO">${link} = https://www.memurlar.net/haber/1070845/feto-suphelisi-2-kisi-yunanistan-a-kacarken-yakalandi.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.749" endtime="20230713 14:32:00.757"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.765" level="INFO">${title} = FETÖ şüphelisi 2 kişi Yunanistan'a kaçarken yakalandı</msg>
+<status status="PASS" starttime="20230713 14:32:00.757" endtime="20230713 14:32:00.765"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.766" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.765" endtime="20230713 14:32:00.766"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.767" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.766" endtime="20230713 14:32:00.767"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.748" endtime="20230713 14:32:00.767"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_48")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.775" level="INFO">${link} = https://www.memurlar.net/haber/1070843/denizli-de-gazinoda-cikan-silahli-kavgada-1-kisi-oldu-2-yaralandi.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.767" endtime="20230713 14:32:00.775"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.783" level="INFO">${title} = Denizli'de gazinoda çıkan silahlı kavgada 1 kişi öldü, 2 yaralandı</msg>
+<status status="PASS" starttime="20230713 14:32:00.775" endtime="20230713 14:32:00.783"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.784" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.783" endtime="20230713 14:32:00.784"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.785" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.784" endtime="20230713 14:32:00.785"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.767" endtime="20230713 14:32:00.785"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_49")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.792" level="INFO">${link} = https://www.memurlar.net/haber/1070842/borsa-gunun-ilk-yarisinda-rekor-seviyeyi-gordu.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.785" endtime="20230713 14:32:00.792"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.800" level="INFO">${title} = Borsa günün ilk yarısında rekor seviyeyi gördü</msg>
+<status status="PASS" starttime="20230713 14:32:00.792" endtime="20230713 14:32:00.800"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.801" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.800" endtime="20230713 14:32:00.801"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.801" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.801" endtime="20230713 14:32:00.801"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.785" endtime="20230713 14:32:00.801"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_50")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.809" level="INFO">${link} = https://www.memurlar.net/haber/1070841/erdogan-verilen-sozler-hayata-gecerse-biz-de-harekete-geceriz.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.802" endtime="20230713 14:32:00.809"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.817" level="INFO">${title} = Erdoğan: Verilen sözler hayata geçerse biz de harekete geçeriz</msg>
+<status status="PASS" starttime="20230713 14:32:00.809" endtime="20230713 14:32:00.817"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.818" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.817" endtime="20230713 14:32:00.818"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.819" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.818" endtime="20230713 14:32:00.819"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.801" endtime="20230713 14:32:00.819"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_51")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.826" level="INFO">${link} = https://www.memurlar.net/haber/1070844/bakan-ozhaseki-den-nurdagi-ndaki-kalici-konutlara-iliskin-aciklama.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.819" endtime="20230713 14:32:00.826"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.833" level="INFO">${title} = Bakan Özhaseki'den Nurdağı'ndaki kalıcı konutlara ilişkin açıklama:</msg>
+<status status="PASS" starttime="20230713 14:32:00.826" endtime="20230713 14:32:00.833"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.834" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.833" endtime="20230713 14:32:00.834"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.835" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.834" endtime="20230713 14:32:00.835"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.819" endtime="20230713 14:32:00.835"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_52")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.842" level="INFO">${link} = https://www.memurlar.net/haber/1070837/menzil-cemaatinin-lideri-elhuseyni-adiyaman-da-defnedildi.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.835" endtime="20230713 14:32:00.842"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.875" level="INFO">${title} = Menzil cemaatinin lideri Elhüseyni Adıyaman'da defnedildi</msg>
+<status status="PASS" starttime="20230713 14:32:00.842" endtime="20230713 14:32:00.876"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.887" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.876" endtime="20230713 14:32:00.887"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.888" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.887" endtime="20230713 14:32:00.888"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.835" endtime="20230713 14:32:00.889"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_53")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.899" level="INFO">${link} = https://www.memurlar.net/haber/1070840/mersin-de-rusvet-ve-dolandiricilik-operasyonunda-7-zanli-yakalandi.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.889" endtime="20230713 14:32:00.899"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.931" level="INFO">${title} = Mersin'de rüşvet ve dolandırıcılık operasyonunda 7 zanlı yakalandı</msg>
+<status status="PASS" starttime="20230713 14:32:00.899" endtime="20230713 14:32:00.931"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.933" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.932" endtime="20230713 14:32:00.933"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.935" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.933" endtime="20230713 14:32:00.935"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.889" endtime="20230713 14:32:00.935"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_54")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.975" level="INFO">${link} = https://www.memurlar.net/haber/1070839/msb-den-bedelli-askerlik-aciklamasi.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.935" endtime="20230713 14:32:00.975"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:00.987" level="INFO">${title} = MSB'den 'bedelli askerlik' açıklaması</msg>
+<status status="PASS" starttime="20230713 14:32:00.976" endtime="20230713 14:32:00.987"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.990" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.987" endtime="20230713 14:32:00.990"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:00.991" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:00.990" endtime="20230713 14:32:00.991"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.935" endtime="20230713 14:32:00.991"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_55")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.000" level="INFO">${link} = https://www.memurlar.net/haber/1070838/ulastirma-bakani-uraloglu-haydarpasa-gari-2024-te-hizmete-alinacak.html</msg>
+<status status="PASS" starttime="20230713 14:32:00.992" endtime="20230713 14:32:01.000"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.008" level="INFO">${title} = Ulaştırma Bakanı Uraloğlu: Haydarpaşa Garı 2024'te hizmete alınacak</msg>
+<status status="PASS" starttime="20230713 14:32:01.000" endtime="20230713 14:32:01.008"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.008" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.008" endtime="20230713 14:32:01.009"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.009" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.009" endtime="20230713 14:32:01.009"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:00.991" endtime="20230713 14:32:01.009"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_56")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.017" level="INFO">${link} = https://www.memurlar.net/haber/1070819/arti-300-tl-ye-adrese-teslim-akademik-ilan.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.009" endtime="20230713 14:32:01.017"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.025" level="INFO">${title} = Artı 300 TL'ye adrese teslim akademik ilan!</msg>
+<status status="PASS" starttime="20230713 14:32:01.017" endtime="20230713 14:32:01.025"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.025" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.025" endtime="20230713 14:32:01.025"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.026" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.026" endtime="20230713 14:32:01.026"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.009" endtime="20230713 14:32:01.026"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_57")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.033" level="INFO">${link} = https://www.memurlar.net/haber/1070836/basortulu-ogrencinin-staja-kabul-edilmemesine-iliskin-davanin-gorulmesine-baslandi.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.026" endtime="20230713 14:32:01.033"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.041" level="INFO">${title} = Başörtülü öğrencinin staja kabul edilmemesine ilişkin davanın görülmesine başlandı</msg>
+<status status="PASS" starttime="20230713 14:32:01.034" endtime="20230713 14:32:01.041"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.042" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.041" endtime="20230713 14:32:01.042"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.042" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.042" endtime="20230713 14:32:01.042"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.026" endtime="20230713 14:32:01.042"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_58")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.051" level="INFO">${link} = https://www.memurlar.net/haber/1070835/yunanistan-a-kacarken-yakalanan-2-feto-suphelisi-tutuklandi.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.043" endtime="20230713 14:32:01.051"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.058" level="INFO">${title} = Yunanistan'a kaçarken yakalanan 2 FETÖ şüphelisi tutuklandı</msg>
+<status status="PASS" starttime="20230713 14:32:01.051" endtime="20230713 14:32:01.058"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.059" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.058" endtime="20230713 14:32:01.059"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.060" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.059" endtime="20230713 14:32:01.060"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.042" endtime="20230713 14:32:01.060"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_59")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.738" level="INFO">${link} = https://www.memurlar.net/haber/1070834/izmir-de-bir-kisi-eski-karisini-oldurup-intihar-etti.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.060" endtime="20230713 14:32:01.738"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.746" level="INFO">${title} = İzmir'de bir kişi eski karısını öldürüp intihar etti</msg>
+<status status="PASS" starttime="20230713 14:32:01.738" endtime="20230713 14:32:01.746"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.758" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.756" endtime="20230713 14:32:01.758"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.776" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.758" endtime="20230713 14:32:01.776"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.060" endtime="20230713 14:32:01.777"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_60")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.787" level="INFO">${link} = https://www.memurlar.net/haber/1070833/erdogan-deprem-bolgesinde-650-bin-konut-insa-etmeyi-hedefliyoruz.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.777" endtime="20230713 14:32:01.787"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.797" level="INFO">${title} = Erdoğan: Deprem bölgesinde 650 bin konut inşa etmeyi hedefliyoruz</msg>
+<status status="PASS" starttime="20230713 14:32:01.787" endtime="20230713 14:32:01.797"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.797" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.797" endtime="20230713 14:32:01.797"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.798" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.798" endtime="20230713 14:32:01.798"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.777" endtime="20230713 14:32:01.798"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_61")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.806" level="INFO">${link} = https://www.memurlar.net/haber/1070830/sivas-ta-kkka-hastaligi-suphesiyle-tedavi-goren-2-kisi-hayatini-kaybetti.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.798" endtime="20230713 14:32:01.806"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.817" level="INFO">${title} = Sivas'ta KKKA hastalığı şüphesiyle tedavi gören 2 kişi hayatını kaybetti</msg>
+<status status="PASS" starttime="20230713 14:32:01.807" endtime="20230713 14:32:01.818"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.819" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.818" endtime="20230713 14:32:01.819"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.820" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.819" endtime="20230713 14:32:01.820"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.798" endtime="20230713 14:32:01.820"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_62")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.828" level="INFO">${link} = https://www.memurlar.net/haber/1070831/dolar-tl-26-16-seviyesinden-islem-goruyor.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.820" endtime="20230713 14:32:01.828"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.836" level="INFO">${title} = Dolar/TL, 26,16 seviyesinden işlem görüyor</msg>
+<status status="PASS" starttime="20230713 14:32:01.828" endtime="20230713 14:32:01.836"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.837" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.836" endtime="20230713 14:32:01.837"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.838" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.837" endtime="20230713 14:32:01.838"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.820" endtime="20230713 14:32:01.838"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_63")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.847" level="INFO">${link} = https://www.memurlar.net/haber/1070832/bakan-tunc-feto-davalarinda-yargi-kuyumcu-titizligiyle-hareket-ediyor.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.838" endtime="20230713 14:32:01.847"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.855" level="INFO">${title} = Bakan Tunç: FETÖ davalarında yargı kuyumcu titizliğiyle hareket ediyor</msg>
+<status status="PASS" starttime="20230713 14:32:01.847" endtime="20230713 14:32:01.855"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.856" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.856" endtime="20230713 14:32:01.856"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.857" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.856" endtime="20230713 14:32:01.857"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.838" endtime="20230713 14:32:01.857"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_64")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.866" level="INFO">${link} = https://www.memurlar.net/haber/1070829/chp-nin-gundemi-degismiyor-secim-oncesi-trt-secim-sonrasi-yine-trt.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.857" endtime="20230713 14:32:01.867"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.875" level="INFO">${title} = CHP'nin gündemi değişmiyor...Seçim öncesi TRT, seçim sonrası yine TRT</msg>
+<status status="PASS" starttime="20230713 14:32:01.867" endtime="20230713 14:32:01.875"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.876" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.875" endtime="20230713 14:32:01.876"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.877" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.876" endtime="20230713 14:32:01.877"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.857" endtime="20230713 14:32:01.877"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_65")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.887" level="INFO">${link} = https://www.memurlar.net/haber/1070828/istanbul-polisi-feto-nun-yeniden-yapilanmasina-gecit-vermedi.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.877" endtime="20230713 14:32:01.887"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.896" level="INFO">${title} = İstanbul polisi FETÖ'nün yeniden yapılanmasına geçit vermedi</msg>
+<status status="PASS" starttime="20230713 14:32:01.887" endtime="20230713 14:32:01.896"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.897" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.896" endtime="20230713 14:32:01.897"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.898" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.897" endtime="20230713 14:32:01.898"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.877" endtime="20230713 14:32:01.898"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_66")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.907" level="INFO">${link} = https://www.memurlar.net/haber/1070827/feto-nun-darbe-girisiminin-uzerinden-7-yil-gecti.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.898" endtime="20230713 14:32:01.907"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.916" level="INFO">${title} = FETÖ'nün darbe girişiminin üzerinden 7 yıl geçti</msg>
+<status status="PASS" starttime="20230713 14:32:01.907" endtime="20230713 14:32:01.916"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.917" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.916" endtime="20230713 14:32:01.917"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.918" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.917" endtime="20230713 14:32:01.918"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.898" endtime="20230713 14:32:01.918"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_67")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.928" level="INFO">${link} = https://www.memurlar.net/haber/1070826/samsun-da-silahli-suc-orgutu-operasyonunda-19-zanli-yakalandi.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.918" endtime="20230713 14:32:01.928"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.936" level="INFO">${title} = Samsun'da silahlı suç örgütü operasyonunda 19 zanlı yakalandı</msg>
+<status status="PASS" starttime="20230713 14:32:01.928" endtime="20230713 14:32:01.936"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.937" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.936" endtime="20230713 14:32:01.937"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.938" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.937" endtime="20230713 14:32:01.938"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.918" endtime="20230713 14:32:01.938"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_68")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.946" level="INFO">${link} = https://www.memurlar.net/haber/1070825/ufuk-ozkan-hastaligi-hakkinda-aciklama-yapti.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.938" endtime="20230713 14:32:01.946"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.954" level="INFO">${title} = Ufuk Özkan hastalığı hakkında açıklama yaptı</msg>
+<status status="PASS" starttime="20230713 14:32:01.946" endtime="20230713 14:32:01.954"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.954" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.954" endtime="20230713 14:32:01.955"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.955" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.955" endtime="20230713 14:32:01.955"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.938" endtime="20230713 14:32:01.955"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_69")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.963" level="INFO">${link} = https://www.memurlar.net/haber/1070807/2-carsi-ve-mahalle-bekcisini-yaralayan-zanli-hayatini-kaybetti.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.955" endtime="20230713 14:32:01.964"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.972" level="INFO">${title} = 2 çarşı ve mahalle bekçisini yaralayan zanlı hayatını kaybetti</msg>
+<status status="PASS" starttime="20230713 14:32:01.964" endtime="20230713 14:32:01.972"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.972" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.972" endtime="20230713 14:32:01.972"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.973" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.973" endtime="20230713 14:32:01.973"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.955" endtime="20230713 14:32:01.973"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_70")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.982" level="INFO">${link} = https://www.memurlar.net/haber/1070824/borsa-gune-yukselisle-basladi.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.973" endtime="20230713 14:32:01.982"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:01.991" level="INFO">${title} = Borsa güne yükselişle başladı</msg>
+<status status="PASS" starttime="20230713 14:32:01.982" endtime="20230713 14:32:01.991"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.992" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.992" endtime="20230713 14:32:01.992"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:01.993" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:01.993" endtime="20230713 14:32:01.993"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.973" endtime="20230713 14:32:01.993"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_71")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.002" level="INFO">${link} = https://www.memurlar.net/haber/1070822/balin-kilogram-maliyeti-110-76-lira-olarak-belirlendi.html</msg>
+<status status="PASS" starttime="20230713 14:32:01.994" endtime="20230713 14:32:02.002"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.012" level="INFO">${title} = Balın kilogram maliyeti 110,76 lira olarak belirlendi</msg>
+<status status="PASS" starttime="20230713 14:32:02.002" endtime="20230713 14:32:02.012"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.013" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.012" endtime="20230713 14:32:02.013"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.014" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.013" endtime="20230713 14:32:02.014"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:01.993" endtime="20230713 14:32:02.014"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_72")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.022" level="INFO">${link} = https://www.memurlar.net/haber/1070823/brent-petrolun-varil-fiyati-80-33-dolar.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.014" endtime="20230713 14:32:02.022"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.030" level="INFO">${title} = Brent petrolün varil fiyatı 80,33 dolar</msg>
+<status status="PASS" starttime="20230713 14:32:02.022" endtime="20230713 14:32:02.030"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.031" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.031" endtime="20230713 14:32:02.031"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.032" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.031" endtime="20230713 14:32:02.032"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.014" endtime="20230713 14:32:02.032"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_73")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.039" level="INFO">${link} = https://www.memurlar.net/haber/1070821/gram-altinda-yeni-rekor.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.032" endtime="20230713 14:32:02.040"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.047" level="INFO">${title} = Gram altında yeni rekor</msg>
+<status status="PASS" starttime="20230713 14:32:02.040" endtime="20230713 14:32:02.047"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.048" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.047" endtime="20230713 14:32:02.048"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.049" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.048" endtime="20230713 14:32:02.049"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.032" endtime="20230713 14:32:02.049"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_74")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.058" level="INFO">${link} = https://www.memurlar.net/haber/1070820/arinc-tan-yerlikaya-ya-iade-edilen-khk-lilar-hakkinda-tesekkur-mesaji.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.049" endtime="20230713 14:32:02.058"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.067" level="INFO">${title} = Arınç'tan Yerlikaya'ya iade edilen KHK'lılar hakkında teşekkür mesajı</msg>
+<status status="PASS" starttime="20230713 14:32:02.058" endtime="20230713 14:32:02.067"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.084" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.067" endtime="20230713 14:32:02.085"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.104" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.085" endtime="20230713 14:32:02.104"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.049" endtime="20230713 14:32:02.104"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_75")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.114" level="INFO">${link} = https://www.memurlar.net/haber/1070817/istanbul-da-feto-sorusturmasi-6-gozalti-karari.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.105" endtime="20230713 14:32:02.114"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.122" level="INFO">${title} = İstanbul'da FETÖ soruşturması: 6 gözaltı kararı</msg>
+<status status="PASS" starttime="20230713 14:32:02.114" endtime="20230713 14:32:02.122"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.124" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.122" endtime="20230713 14:32:02.124"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.125" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.124" endtime="20230713 14:32:02.126"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.105" endtime="20230713 14:32:02.126"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_76")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.134" level="INFO">${link} = https://www.memurlar.net/haber/1070815/turkiye-asiri-sicaklarin-etkisinde-gerekmedikce-dislari-cikmayin-uyarisi.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.126" endtime="20230713 14:32:02.134"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.143" level="INFO">${title} = Türkiye aşırı sıcakların etkisinde: 'Gerekmedikçe dışları çıkmayın' uyarısı</msg>
+<status status="PASS" starttime="20230713 14:32:02.134" endtime="20230713 14:32:02.143"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.144" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.143" endtime="20230713 14:32:02.144"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.164" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.145" endtime="20230713 14:32:02.164"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.126" endtime="20230713 14:32:02.164"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_77")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.174" level="INFO">${link} = https://www.memurlar.net/haber/1070814/adalet-eski-bakanlarindan-ipek-cezaevi-ve-adliye-personeline-maas-duzenlemesi-istedi.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.165" endtime="20230713 14:32:02.174"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.182" level="INFO">${title} = Adalet eski Bakanlarından İpek, cezaevi ve adliye personeline maaş düzenlemesi istedi</msg>
+<status status="PASS" starttime="20230713 14:32:02.174" endtime="20230713 14:32:02.182"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.200" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.182" endtime="20230713 14:32:02.200"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.219" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.200" endtime="20230713 14:32:02.219"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.164" endtime="20230713 14:32:02.219"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_78")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.228" level="INFO">${link} = https://www.memurlar.net/haber/1070813/kesinlesmis-hapis-cezasi-bulunan-teror-orgutu-dhkp-c-uyesi-tutuklandi.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.219" endtime="20230713 14:32:02.228"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.248" level="INFO">${title} = Kesinleşmiş hapis cezası bulunan terör örgütü DHKP-C üyesi tutuklandı</msg>
+<status status="PASS" starttime="20230713 14:32:02.238" endtime="20230713 14:32:02.248"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.258" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.248" endtime="20230713 14:32:02.258"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.277" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.258" endtime="20230713 14:32:02.277"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.219" endtime="20230713 14:32:02.277"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_79")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.287" level="INFO">${link} = https://www.memurlar.net/haber/1070760/dondurucuda-bulunan-ceset-milli-gazete-yazarinin-oglu-cikti.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.277" endtime="20230713 14:32:02.287"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.295" level="INFO">${title} = Dondurucuda bulunan ceset, Milli Gazete yazarının oğlu çıktı</msg>
+<status status="PASS" starttime="20230713 14:32:02.287" endtime="20230713 14:32:02.295"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.296" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.295" endtime="20230713 14:32:02.296"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.315" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.296" endtime="20230713 14:32:02.315"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.277" endtime="20230713 14:32:02.315"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_80")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.324" level="INFO">${link} = https://www.memurlar.net/haber/1070812/memur-ve-emeklinin-zamli-maas-takvimi-belli-oldu.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.315" endtime="20230713 14:32:02.324"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.332" level="INFO">${title} = Memur ve emeklinin zamlı maaş takvimi belli oldu</msg>
+<status status="PASS" starttime="20230713 14:32:02.324" endtime="20230713 14:32:02.332"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.334" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.332" endtime="20230713 14:32:02.334"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.353" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.334" endtime="20230713 14:32:02.353"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.315" endtime="20230713 14:32:02.353"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_81")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.362" level="INFO">${link} = https://www.memurlar.net/haber/1070811/evde-talep-durdu-fiyatlar-dusuyor.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.353" endtime="20230713 14:32:02.362"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.369" level="INFO">${title} = Evde talep durdu fiyatlar düşüyor!</msg>
+<status status="PASS" starttime="20230713 14:32:02.362" endtime="20230713 14:32:02.369"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.372" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.369" endtime="20230713 14:32:02.372"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.391" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.372" endtime="20230713 14:32:02.391"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.353" endtime="20230713 14:32:02.391"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_82")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.419" level="INFO">${link} = https://www.memurlar.net/haber/1070810/20-kontenjan-icin-veliler-nobette.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.391" endtime="20230713 14:32:02.419"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.426" level="INFO">${title} = 20 kontenjan için veliler nöbette</msg>
+<status status="PASS" starttime="20230713 14:32:02.419" endtime="20230713 14:32:02.426"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.427" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.427" endtime="20230713 14:32:02.427"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.446" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.428" endtime="20230713 14:32:02.447"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.391" endtime="20230713 14:32:02.447"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_83")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.455" level="INFO">${link} = https://www.memurlar.net/haber/1070808/erdogan-dan-seyyid-abdulbaki-elhuseyni-icin-bassagligi-mesaji.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.447" endtime="20230713 14:32:02.455"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.463" level="INFO">${title} = Erdoğan'dan Seyyid Abdulbaki Elhüseyni için başsağlığı mesajı</msg>
+<status status="PASS" starttime="20230713 14:32:02.455" endtime="20230713 14:32:02.463"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.466" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.464" endtime="20230713 14:32:02.466"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.486" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.466" endtime="20230713 14:32:02.486"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.447" endtime="20230713 14:32:02.486"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_84")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.495" level="INFO">${link} = https://www.memurlar.net/haber/1070809/batman-da-otomobille-carpisan-ekip-motosikletindeki-2-polis-yaralandi.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.486" endtime="20230713 14:32:02.495"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.503" level="INFO">${title} = Batman'da otomobille çarpışan ekip motosikletindeki 2 polis yaralandı</msg>
+<status status="PASS" starttime="20230713 14:32:02.495" endtime="20230713 14:32:02.503"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.505" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.503" endtime="20230713 14:32:02.505"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.523" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.505" endtime="20230713 14:32:02.523"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.486" endtime="20230713 14:32:02.524"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_85")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.533" level="INFO">${link} = https://www.memurlar.net/haber/1070806/memur-maasi-ve-emekli-ayliklarini-arttiran-duzenlemenin-ilk-7-maddesi-kabul-edildi.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.524" endtime="20230713 14:32:02.533"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.541" level="INFO">${title} = Memur maaşı ve emekli aylıklarını arttıran düzenlemenin ilk 7 maddesi kabul edildi</msg>
+<status status="PASS" starttime="20230713 14:32:02.533" endtime="20230713 14:32:02.541"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.543" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.541" endtime="20230713 14:32:02.543"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.564" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.543" endtime="20230713 14:32:02.565"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.524" endtime="20230713 14:32:02.565"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_86")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.575" level="INFO">${link} = https://www.memurlar.net/haber/1070805/emniyet-kemeri-takili-tir-soforu-duzce-de-devrilen-aracinin-icinden-sag-salim-cikarildi.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.565" endtime="20230713 14:32:02.575"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.583" level="INFO">${title} = Emniyet kemeri takılı tır şoförü, Düzce'de devrilen aracının içinden sağ salim çıkarıldı</msg>
+<status status="PASS" starttime="20230713 14:32:02.575" endtime="20230713 14:32:02.583"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.585" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.583" endtime="20230713 14:32:02.586"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.606" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.586" endtime="20230713 14:32:02.606"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.565" endtime="20230713 14:32:02.606"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_87")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.621" level="INFO">${link} = https://www.memurlar.net/haber/1070804/yuksekogretim-kalite-kurulu-yonetmeliginde-degisiklik-yapildi.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.607" endtime="20230713 14:32:02.621"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.629" level="INFO">${title} = Yükseköğretim Kalite Kurulu Yönetmeliğinde değişiklik yapıldı</msg>
+<status status="PASS" starttime="20230713 14:32:02.621" endtime="20230713 14:32:02.629"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.646" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.629" endtime="20230713 14:32:02.647"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.669" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.647" endtime="20230713 14:32:02.669"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.607" endtime="20230713 14:32:02.669"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_88")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.679" level="INFO">${link} = https://www.memurlar.net/haber/1070803/milyonlarca-memur-ve-emekliyi-yakindan-ilgilendiriyor-ilk-4-madde-kabul-edildi.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.669" endtime="20230713 14:32:02.679"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.687" level="INFO">${title} = Milyonlarca memur ve emekliyi yakından ilgilendiriyor! İlk 4 madde kabul edildi</msg>
+<status status="PASS" starttime="20230713 14:32:02.679" endtime="20230713 14:32:02.687"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.690" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.687" endtime="20230713 14:32:02.690"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.691" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.690" endtime="20230713 14:32:02.691"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.669" endtime="20230713 14:32:02.691"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_89")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.699" level="INFO">${link} = https://www.memurlar.net/haber/1070802/cumhurbaskani-erdogan-dan-abd-baskani-biden-in-twitter-paylasimina-yanit.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.691" endtime="20230713 14:32:02.699"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.707" level="INFO">${title} = Cumhurbaşkanı Erdoğan'dan ABD Başkanı Biden'in Twitter paylaşımına yanıt</msg>
+<status status="PASS" starttime="20230713 14:32:02.699" endtime="20230713 14:32:02.707"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.708" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.707" endtime="20230713 14:32:02.708"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.709" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.708" endtime="20230713 14:32:02.709"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.691" endtime="20230713 14:32:02.709"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_90")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.717" level="INFO">${link} = https://www.memurlar.net/haber/1070801/yeni-harc-tutarlari-resmi-gazete-de-yayimlandi.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.709" endtime="20230713 14:32:02.717"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.725" level="INFO">${title} = Yeni harç tutarları Resmi Gazete'de yayımlandı</msg>
+<status status="PASS" starttime="20230713 14:32:02.717" endtime="20230713 14:32:02.725"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.726" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.725" endtime="20230713 14:32:02.726"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.727" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.726" endtime="20230713 14:32:02.727"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.709" endtime="20230713 14:32:02.727"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_91")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.735" level="INFO">${link} = https://www.memurlar.net/haber/1070800/aciktan-kura-ile-atanacak-saglik-personelinin-atanmasina-iliskin-yonetmelik.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.727" endtime="20230713 14:32:02.735"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.742" level="INFO">${title} = Açıktan Kura ile Atanacak Sağlık Personelinin Atanmasına İlişkin Yönetmelik</msg>
+<status status="PASS" starttime="20230713 14:32:02.735" endtime="20230713 14:32:02.742"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.743" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.742" endtime="20230713 14:32:02.743"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.744" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.743" endtime="20230713 14:32:02.744"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.727" endtime="20230713 14:32:02.744"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_92")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.752" level="INFO">${link} = https://www.memurlar.net/haber/1070708/cevre-muhendisligi-mezunlari-cevre-gorevlisi-olarak-gecen-sureleri-kazanilmis-hak-ayligindan-sayilir-mi.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.744" endtime="20230713 14:32:02.752"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.759" level="INFO">${title} = Çevre mühendisliği mezunları, çevre görevlisi olarak geçen süreleri kazanılmış hak aylığından sayılır mı?</msg>
+<status status="PASS" starttime="20230713 14:32:02.752" endtime="20230713 14:32:02.759"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.778" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.759" endtime="20230713 14:32:02.778"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.779" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.778" endtime="20230713 14:32:02.779"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.744" endtime="20230713 14:32:02.780"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="4488e62782b6f7ea2a82828d4884654e", element="C5EF12C558CACD0D145BEF9DC73F977D_element_93")&gt;</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${link}</var>
+<arg>${element}</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.788" level="INFO">${link} = https://www.memurlar.net/haber/1070799/13-temmuz-2023-ten-onemli-gundem-basliklari.html</msg>
+<status status="PASS" starttime="20230713 14:32:02.780" endtime="20230713 14:32:02.788"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${title}</var>
+<arg>${element}</arg>
+<arg>title</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230713 14:32:02.796" level="INFO">${title} = 13 Temmuz 2023'ten önemli gündem başlıkları</msg>
+<status status="PASS" starttime="20230713 14:32:02.789" endtime="20230713 14:32:02.796"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${title}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.797" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.796" endtime="20230713 14:32:02.797"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>${link}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230713 14:32:02.798" level="INFO" html="true">Appended to file '&lt;a href="file:///Users/abayar/PycharmProjects/Automation/Memurlar/result.txt"&gt;/Users/abayar/PycharmProjects/Automation/Memurlar/result.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230713 14:32:02.797" endtime="20230713 14:32:02.798"/>
+</kw>
+<status status="PASS" starttime="20230713 14:32:02.780" endtime="20230713 14:32:02.798"/>
+</iter>
+<status status="PASS" starttime="20230713 14:32:00.509" endtime="20230713 14:32:02.798"/>
+</for>
+<status status="PASS" starttime="20230713 14:31:48.315" endtime="20230713 14:32:02.799"/>
+</test>
+<status status="PASS" starttime="20230713 14:31:48.039" endtime="20230713 14:32:02.799"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test2">Test2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
